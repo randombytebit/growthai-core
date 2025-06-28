@@ -18,7 +18,6 @@ public class LLMResponse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long responseId;
 
-    // One-to-one relationship with UserMessage
     @OneToOne
     @JoinColumn(name = "user_message_id", nullable = false)
     private UserMessage userMessage;

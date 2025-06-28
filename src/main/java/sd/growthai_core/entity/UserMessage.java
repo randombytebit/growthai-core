@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Table(name = "user_messages")
 @Data
@@ -61,10 +59,6 @@ public class UserMessage {
 
     @Column(name = "word_count")
     private Integer wordCount;
-
-    // Relationship to AI response
-    @OneToOne(mappedBy = "userMessage", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private LLMResponse llmResponse;
 
     @PrePersist
     protected void onCreate() {
